@@ -2,7 +2,7 @@
 
 A simulator for the 2-player game *A Game of Thrones: Hand of the King* (Fantasy
 Flight, 2016): a 6×6 grid of characters, Varys moving in straight lines, and
-companion cards. It includes twelve AI strategies and a round-robin tournament
+companion cards. It includes fourteen AI strategies and a round-robin tournament
 that keeps playing each pairing until the result is statistically settled.
 
 ## TL;DR
@@ -14,13 +14,18 @@ with a winning record against every other one, with and without companion cards:
 
 | | With companions | Without companions |
 |---|---|---|
-| Rating (Random = 0) | **771** (next best 743) | **792** (next best 692) |
-| Average win rate vs the field | 78.5% | 87.1% |
+| Rating (Random = 0) | **774** (next best 751) | **802** (next best 706) |
+| Average win rate vs the field | 80.1% | 88.1% |
 | **Worst matchup** | **57.8%** vs AlphaBeta5 (95% CI 55.0–60.6%) | **70.6%** vs MCTS400 (95% CI 67.7–73.3%) |
 
 Simple heuristics lose badly to search. Greedy players ("take the most cards",
 "win a banner now", "cheap small houses first") win only 4–12% against the top
 strategies.
+
+**"Take the biggest percentage of a House" is a decent rule of thumb, but only that.**
+It beats card-grabbing (74%) and small-houses-first (55%), and is about level
+with "win a banner now" (44–47%). Against the lookahead bots it wins only 8–24%.
+See [Percentage rules](#percentage-rules) below.
 
 **Seat matters:** the first player wins about 55% of games between equal players.
 
@@ -45,7 +50,7 @@ The game is tight: it averages only **4.7 legal moves** per turn.
 5. **Count out the endgame.** The game ends the moment Varys has no card in his
    row or column. That often means the last few cards are never taken, so you can
    engineer the finish: the move that strands Varys while you are ahead wins.
-   Adding exact endgame solving was worth +35 rating with companions and +187
+   Adding exact endgame solving was worth +35 rating with companions and +183
    without, against the same search otherwise.
    **What separates it from the greedy player** (`results/greedybanners_analysis.txt`):
    GreedyBanners takes the biggest grab more often (85% vs 80%) and grabs an
@@ -57,6 +62,38 @@ The game is tight: it averages only **4.7 legal moves** per turn.
    once. Clearing a house (to earn a companion) happened on about 20% of its
    moves.
 
+## Percentage rules
+
+Two variants of "take the group that is the biggest share of its House":
+
+* **PercentOfHouse**: share of the House's *total* size (2 Tully = 100%, 3 Stark = 37.5%).
+* **PercentOfRemaining**: share of that House's cards *still on the board*. Any
+  move that clears a House scores 100%, so it always grabs companions when it can.
+
+Win rates (95% CI within about ±3 points):
+
+| PercentOfHouse vs | With companions | Without companions |
+|---|---|---|
+| Random | 94% | 86% |
+| GreedyCards | 74% | 62% |
+| SmallHousesFirst | 55% | 57% |
+| PercentOfRemaining | 50% | 62% |
+| GreedyBanners | 44% | 47% |
+| Heuristic1 (1-move lookahead) | 39% | 43% |
+| AlphaBeta2 (your move + their reply) | 22% | 24% |
+| AlphaBeta5+Solve14 (champion) | 12% | 9% |
+
+Takeaways:
+* Weighting by House size helps: it is clearly better than grabbing the most
+  cards, because a small House's cards are each worth more of a banner.
+* It ignores who already holds each banner and what the move sets up for the
+  opponent. Adding just one step of lookahead (AlphaBeta2) beats it 76–78% of
+  the time.
+* PercentOfRemaining performs the same as PercentOfHouse with companions, but
+  much worse without them (38% head-to-head). Clearing Houses only pays off
+  because of the companions; without them it is a wasted priority. This roughly
+  measures how much companions are worth to a simple strategy.
+
 ## Strategies tested
 
 | Strategy | Idea |
@@ -65,6 +102,8 @@ The game is tight: it averages only **4.7 legal moves** per turn.
 | GreedyCards | take the move that collects the most cards |
 | SmallHousesFirst | human-style: grab banners of the smallest houses first |
 | GreedyBanners | maximise banners held right after the move |
+| PercentOfHouse | take the group that is the largest share of its House's total size |
+| PercentOfRemaining | take the group that is the largest share of its House's cards left on the board |
 | Heuristic1 | 1-move lookahead with a positional score (banner locks, card margins) |
 | AlphaBeta2–5 | minimax with alpha-beta pruning, 2–5 half-moves deep, same score |
 | **AlphaBeta5+Solve14** | AlphaBeta5, plus exact search to the end once ≤14 cards remain |
@@ -73,12 +112,12 @@ The game is tight: it averages only **4.7 legal moves** per turn.
 
 ## Method
 
-* Every pairing (66 of them) is played in **mirrored pairs**: the same shuffled
+* Every pairing (91 of them) is played in **mirrored pairs**: the same shuffled
   board is played twice with seats swapped. That cancels out board luck and the
   first-player advantage.
 * Batches of 200 games are added to each pairing until the 95% Wilson confidence
   interval on its win rate is within ±3 points, or 2,000 games are reached. That
-  gave **93,000 games** in total across the two rule variants.
+  gave **132,000 games** in total across the two rule variants.
 * Overall ratings are fitted with a Bradley–Terry model on an Elo scale.
 * Full matrices: `results/companions.txt` and `results/no_companions.txt`; raw
   counts with CIs are in the `.json` files.
