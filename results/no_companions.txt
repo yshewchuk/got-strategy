@@ -1,42 +1,44 @@
-[     52s] games=51200 pairs still running=23
-[     89s] games=55800 pairs still running=18
-[    103s] games=59400 pairs still running=12
-[    110s] games=61800 pairs still running=10
-[    110s] games=63800 pairs still running=7
-[    110s] games=65200 pairs still running=0
+[     25s] games=68000 pairs still running=13
+[     37s] games=70600 pairs still running=11
+[     44s] games=72800 pairs still running=9
+[     50s] games=74600 pairs still running=6
+[     50s] games=75800 pairs still running=4
+[     50s] games=76600 pairs still running=0
 
-Companions: off   total games: 65200
-First-seat win rate: 0.545
+Companions: off   total games: 76600
+First-seat win rate: 0.551
 
 Ratings (Bradley-Terry, Elo scale, Random = 0) and worst matchup:
-  AlphaBeta5+Solve14 elo=   802  avg win=0.881  worst=0.706 vs MCTS400
-  MCTS400            elo=   706  avg win=0.826  worst=0.294 vs AlphaBeta5+Solve14
-  AlphaBeta5         elo=   619  avg win=0.743  worst=0.256 vs AlphaBeta5+Solve14
-  AlphaBeta4         elo=   578  avg win=0.711  worst=0.221 vs AlphaBeta5+Solve14
-  AlphaBeta3         elo=   520  avg win=0.648  worst=0.195 vs AlphaBeta5+Solve14
-  MonteCarlo30       elo=   474  avg win=0.604  worst=0.087 vs AlphaBeta5+Solve14
-  AlphaBeta2         elo=   468  avg win=0.601  worst=0.128 vs AlphaBeta5+Solve14
-  Heuristic1         elo=   256  avg win=0.363  worst=0.052 vs MCTS400
-  PercentOfHouse     elo=   234  avg win=0.345  worst=0.062 vs MCTS400
-  GreedyBanners      elo=   233  avg win=0.337  worst=0.040 vs MCTS400
-  SmallHousesFirst   elo=   203  avg win=0.313  worst=0.033 vs MCTS400
-  GreedyCards        elo=   150  avg win=0.255  worst=0.030 vs AlphaBeta5+Solve14
-  PercentOfRemaining elo=   147  avg win=0.251  worst=0.015 vs MCTS400
+  AlphaBeta5+Solve14 elo=   803  avg win=0.883  worst=0.706 vs MCTS400
+  MCTS400            elo=   712  avg win=0.837  worst=0.294 vs AlphaBeta5+Solve14
+  AlphaBeta5         elo=   624  avg win=0.754  worst=0.256 vs AlphaBeta5+Solve14
+  AlphaBeta4         elo=   581  avg win=0.720  worst=0.221 vs AlphaBeta5+Solve14
+  AlphaBeta3         elo=   526  avg win=0.660  worst=0.195 vs AlphaBeta5+Solve14
+  MonteCarlo30       elo=   480  avg win=0.617  worst=0.087 vs AlphaBeta5+Solve14
+  AlphaBeta2         elo=   472  avg win=0.612  worst=0.128 vs AlphaBeta5+Solve14
+  Heuristic1         elo=   268  avg win=0.379  worst=0.052 vs MCTS400
+  PercentOfOpenHouse elo=   257  avg win=0.372  worst=0.030 vs MCTS400
+  GreedyBanners      elo=   241  avg win=0.348  worst=0.040 vs MCTS400
+  PercentOfHouse     elo=   239  avg win=0.353  worst=0.062 vs MCTS400
+  SmallHousesFirst   elo=   209  avg win=0.322  worst=0.033 vs MCTS400
+  GreedyCards        elo=   157  avg win=0.262  worst=0.030 vs AlphaBeta5+Solve14
+  PercentOfRemaining elo=   154  avg win=0.259  worst=0.015 vs MCTS400
   Random             elo=     0  avg win=0.122  worst=0.005 vs AlphaBeta4
 
 Win-rate matrix (row vs column):
-                  AlphaBeta   MCTS400 AlphaBeta AlphaBeta AlphaBeta MonteCarl AlphaBeta Heuristic PercentOf GreedyBan SmallHous GreedyCar PercentOf    Random
-AlphaBeta5+Solve14    --        0.706     0.744     0.779     0.805     0.912     0.872     0.930     0.915     0.932     0.938     0.970     0.960     0.995
-MCTS400               0.294     --        0.677     0.643     0.770     0.838     0.764     0.948     0.938     0.960     0.968     0.970     0.985     0.990
-AlphaBeta5            0.256     0.323     --        0.628     0.627     0.686     0.775     0.882     0.917     0.875     0.902     0.912     0.935     0.945
-AlphaBeta4            0.221     0.357     0.372     --        0.574     0.678     0.662     0.875     0.872     0.907     0.860     0.922     0.945     0.995
-AlphaBeta3            0.195     0.230     0.373     0.426     --        0.541     0.627     0.858     0.865     0.800     0.838     0.857     0.882     0.927
-MonteCarlo30          0.087     0.163     0.314     0.322     0.459     --        0.461     0.792     0.814     0.843     0.848     0.908     0.883     0.955
-AlphaBeta2            0.128     0.236     0.225     0.338     0.372     0.539     --        0.777     0.762     0.842     0.806     0.902     0.898     0.985
-Heuristic1            0.070     0.052     0.118     0.125     0.142     0.207     0.223     --        0.570     0.525     0.589     0.693     0.658     0.744
-PercentOfHouse        0.085     0.062     0.083     0.128     0.135     0.186     0.237     0.430     --        0.465     0.573     0.622     0.615     0.863
-GreedyBanners         0.068     0.040     0.125     0.092     0.200     0.157     0.158     0.475     0.535     --        0.562     0.633     0.606     0.725
-SmallHousesFirst      0.062     0.033     0.098     0.140     0.163     0.152     0.194     0.411     0.427     0.438     --        0.626     0.521     0.811
-GreedyCards           0.030     0.030     0.087     0.077     0.143     0.092     0.098     0.307     0.378     0.367     0.374     --        0.575     0.752
-PercentOfRemaining    0.040     0.015     0.065     0.055     0.118     0.117     0.102     0.342     0.385     0.394     0.479     0.425     --        0.721
-Random                0.005     0.010     0.055     0.005     0.072     0.045     0.015     0.256     0.137     0.275     0.189     0.247     0.279     --   
+                  AlphaBeta   MCTS400 AlphaBeta AlphaBeta AlphaBeta MonteCarl AlphaBeta Heuristic PercentOf GreedyBan PercentOf SmallHous GreedyCar PercentOf    Random
+AlphaBeta5+Solve14    --        0.706     0.744     0.779     0.805     0.912     0.872     0.930     0.910     0.932     0.915     0.938     0.970     0.960     0.995
+MCTS400               0.294     --        0.677     0.643     0.770     0.838     0.764     0.948     0.970     0.960     0.938     0.968     0.970     0.985     0.990
+AlphaBeta5            0.256     0.323     --        0.628     0.627     0.686     0.775     0.882     0.897     0.875     0.917     0.902     0.912     0.935     0.945
+AlphaBeta4            0.221     0.357     0.372     --        0.574     0.678     0.662     0.875     0.833     0.907     0.872     0.860     0.922     0.945     0.995
+AlphaBeta3            0.195     0.230     0.373     0.426     --        0.541     0.627     0.858     0.828     0.800     0.865     0.838     0.857     0.882     0.927
+MonteCarlo30          0.087     0.163     0.314     0.322     0.459     --        0.461     0.792     0.790     0.843     0.814     0.848     0.908     0.883     0.955
+AlphaBeta2            0.128     0.236     0.225     0.338     0.372     0.539     --        0.777     0.754     0.842     0.762     0.806     0.902     0.898     0.985
+Heuristic1            0.070     0.052     0.118     0.125     0.142     0.207     0.223     --        0.583     0.525     0.570     0.589     0.693     0.658     0.744
+PercentOfOpenHouse    0.090     0.030     0.102     0.167     0.172     0.210     0.246     0.417     --        0.505     0.542     0.573     0.641     0.633     0.887
+GreedyBanners         0.068     0.040     0.125     0.092     0.200     0.157     0.158     0.475     0.495     --        0.535     0.562     0.633     0.606     0.725
+PercentOfHouse        0.085     0.062     0.083     0.128     0.135     0.186     0.237     0.430     0.458     0.465     --        0.573     0.622     0.615     0.863
+SmallHousesFirst      0.062     0.033     0.098     0.140     0.163     0.152     0.194     0.411     0.427     0.438     0.427     --        0.626     0.521     0.811
+GreedyCards           0.030     0.030     0.087     0.077     0.143     0.092     0.098     0.307     0.359     0.367     0.378     0.374     --        0.575     0.752
+PercentOfRemaining    0.040     0.015     0.065     0.055     0.118     0.117     0.102     0.342     0.367     0.394     0.385     0.479     0.425     --        0.721
+Random                0.005     0.010     0.055     0.005     0.072     0.045     0.015     0.256     0.113     0.275     0.137     0.189     0.247     0.279     --   

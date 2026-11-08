@@ -2,7 +2,7 @@
 
 A simulator for the 2-player game *A Game of Thrones: Hand of the King* (Fantasy
 Flight, 2016): a 6×6 grid of characters, Varys moving in straight lines, and
-companion cards. It includes fourteen AI strategies and a round-robin tournament
+companion cards. It includes fifteen AI strategies and a round-robin tournament
 that keeps playing each pairing until the result is statistically settled.
 
 ## TL;DR
@@ -83,7 +83,26 @@ Win rates (95% CI within about ±3 points):
 | AlphaBeta2 (your move + their reply) | 22% | 24% |
 | AlphaBeta5+Solve14 (champion) | 12% | 9% |
 
+**PercentOfOpenHouse** (suggested tweak): the same as PercentOfHouse, but skip
+Houses whose banner is already *set* (the holder has more cards than the other
+player could reach with every remaining card of that House), unless the move
+takes the House's last card(s) and so earns a companion.
+
+| PercentOfOpenHouse vs | With companions | Without companions |
+|---|---|---|
+| PercentOfHouse | **54.7%** (51.8–57.5) | **54.2%** (51.3–57.0) |
+| GreedyBanners | 48% | 51% |
+| Heuristic1 | 42% | 42% |
+| AlphaBeta2 | 22% | 25% |
+| AlphaBeta5+Solve14 (champion) | 15% | 9% |
+
+The filter changes only about 1 decision in 27 (3.7%), yet that is enough for a
+statistically clear edge over the plain rule. It ranks as the best of the
+no-lookahead rules of thumb, level with GreedyBanners. Only the 1-move scorer
+(Heuristic1) and the lookahead bots beat it.
+
 Takeaways:
+* Don't waste moves on banners that are already decided.
 * Weighting by House size helps: it is clearly better than grabbing the most
   cards, because a small House's cards are each worth more of a banner.
 * It ignores who already holds each banner and what the move sets up for the
@@ -104,6 +123,7 @@ Takeaways:
 | GreedyBanners | maximise banners held right after the move |
 | PercentOfHouse | take the group that is the largest share of its House's total size |
 | PercentOfRemaining | take the group that is the largest share of its House's cards left on the board |
+| PercentOfOpenHouse | PercentOfHouse, skipping Houses whose banner is already set unless clearing them |
 | Heuristic1 | 1-move lookahead with a positional score (banner locks, card margins) |
 | AlphaBeta2–5 | minimax with alpha-beta pruning, 2–5 half-moves deep, same score |
 | **AlphaBeta5+Solve14** | AlphaBeta5, plus exact search to the end once ≤14 cards remain |
@@ -112,12 +132,12 @@ Takeaways:
 
 ## Method
 
-* Every pairing (91 of them) is played in **mirrored pairs**: the same shuffled
+* Every pairing (105 of them) is played in **mirrored pairs**: the same shuffled
   board is played twice with seats swapped. That cancels out board luck and the
   first-player advantage.
 * Batches of 200 games are added to each pairing until the 95% Wilson confidence
   interval on its win rate is within ±3 points, or 2,000 games are reached. That
-  gave **132,000 games** in total across the two rule variants.
+  gave **155,600 games** in total across the two rule variants.
 * Overall ratings are fitted with a Bradley–Terry model on an Elo scale.
 * Full matrices: `results/companions.txt` and `results/no_companions.txt`; raw
   counts with CIs are in the `.json` files.
