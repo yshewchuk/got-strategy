@@ -121,6 +121,31 @@ class PercentOfHouse(Strategy):
         return max(legal_moves(s), key=lambda m: (len(m[3]) / HOUSE_SIZE[m[1]], len(m[3]), rng.random()))
 
 
+def banner_is_set(s, h: int, bc=None) -> bool:
+    """True if the House's banner can no longer change hands from board cards:
+    the holder has more cards than the other player could reach by taking
+    every remaining card of that House (a tie would flip it)."""
+    holder = s.banner[h]
+    if holder is None:
+        return False
+    if bc is None:
+        bc = s.board_counts()
+    return s.counts[holder][h] > s.counts[1 - holder][h] + bc[h]
+
+
+class PercentOfOpenHouse(Strategy):
+    """Largest share of the House's total size, but skip Houses whose banner is
+    already set, unless the move takes the last card(s) of that House (which
+    earns a companion). Falls back to plain PercentOfHouse if nothing qualifies."""
+    name = "PercentOfOpenHouse"
+
+    def choose_move(self, s, rng):
+        bc = s.board_counts()
+        moves = legal_moves(s)
+        ok = [m for m in moves if not banner_is_set(s, m[1], bc) or len(m[3]) == bc[m[1]]]
+        return max(ok or moves, key=lambda m: (len(m[3]) / HOUSE_SIZE[m[1]], len(m[3]), rng.random()))
+
+
 class PercentOfRemaining(Strategy):
     """Take the group that captures the largest share of that House's cards still
     on the board (100% = you clear the House and earn a companion)."""
@@ -307,6 +332,7 @@ def all_strategies():
         SmallHousesFirst(),
         PercentOfHouse(),
         PercentOfRemaining(),
+        PercentOfOpenHouse(),
         GreedyBanners(),
         Heuristic(),
         AlphaBeta(2),
