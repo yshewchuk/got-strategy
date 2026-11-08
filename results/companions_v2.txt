@@ -1,0 +1,2 @@
+[    107s] games=51800 pairs still running=25
+[    214s] games=56800 pairs still running=20
