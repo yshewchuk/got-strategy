@@ -1,88 +1,102 @@
 {
  "companions": true,
- "first_seat_win_rate": 0.5464529914529914,
+ "first_seat_win_rate": 0.5417821782178218,
  "ranking": [
   {
    "strategy": "AlphaBeta5+Solve14",
-   "elo": 771,
-   "avg_win": 0.785,
+   "elo": 774,
+   "avg_win": 0.801,
    "worst_win": 0.578,
    "worst_vs": "AlphaBeta5"
   },
   {
    "strategy": "MCTS400",
-   "elo": 743,
-   "avg_win": 0.774,
+   "elo": 751,
+   "avg_win": 0.797,
    "worst_win": 0.417,
    "worst_vs": "AlphaBeta5+Solve14"
   },
   {
    "strategy": "AlphaBeta5",
-   "elo": 736,
-   "avg_win": 0.759,
+   "elo": 739,
+   "avg_win": 0.777,
    "worst_win": 0.422,
    "worst_vs": "AlphaBeta5+Solve14"
   },
   {
    "strategy": "AlphaBeta4",
-   "elo": 679,
-   "avg_win": 0.705,
+   "elo": 685,
+   "avg_win": 0.729,
    "worst_win": 0.341,
    "worst_vs": "AlphaBeta5+Solve14"
   },
   {
    "strategy": "AlphaBeta3",
-   "elo": 632,
-   "avg_win": 0.65,
+   "elo": 641,
+   "avg_win": 0.682,
    "worst_win": 0.307,
    "worst_vs": "AlphaBeta5+Solve14"
   },
   {
    "strategy": "AlphaBeta2",
-   "elo": 586,
-   "avg_win": 0.605,
+   "elo": 593,
+   "avg_win": 0.634,
    "worst_win": 0.266,
    "worst_vs": "AlphaBeta5"
   },
   {
    "strategy": "MonteCarlo30",
-   "elo": 489,
-   "avg_win": 0.498,
+   "elo": 502,
+   "avg_win": 0.533,
    "worst_win": 0.143,
    "worst_vs": "MCTS400"
   },
   {
    "strategy": "Heuristic1",
-   "elo": 358,
-   "avg_win": 0.355,
+   "elo": 383,
+   "avg_win": 0.395,
    "worst_win": 0.085,
    "worst_vs": "MCTS400"
   },
   {
    "strategy": "GreedyBanners",
-   "elo": 327,
-   "avg_win": 0.32,
+   "elo": 350,
+   "avg_win": 0.356,
    "worst_win": 0.058,
    "worst_vs": "MCTS400"
   },
   {
+   "strategy": "PercentOfHouse",
+   "elo": 338,
+   "avg_win": 0.36,
+   "worst_win": 0.08,
+   "worst_vs": "MCTS400"
+  },
+  {
+   "strategy": "PercentOfRemaining",
+   "elo": 330,
+   "avg_win": 0.345,
+   "worst_win": 0.072,
+   "worst_vs": "MCTS400"
+  },
+  {
    "strategy": "SmallHousesFirst",
-   "elo": 278,
-   "avg_win": 0.279,
+   "elo": 292,
+   "avg_win": 0.303,
    "worst_win": 0.04,
    "worst_vs": "MCTS400"
   },
   {
    "strategy": "GreedyCards",
-   "elo": 177,
-   "avg_win": 0.194,
+   "elo": 188,
+   "avg_win": 0.209,
    "worst_win": 0.03,
    "worst_vs": "AlphaBeta5"
   },
   {
    "strategy": "Random",
    "elo": 0,
-   "avg_win": 0.078,
+   "avg_win": 0.079,
    "worst_win": 0.005,
    "worst_vs": "MCTS400"
   }
@@ -106,6 +120,26 @@
    "ci95": [
     0.116,
     0.1719
+   ]
+  },
+  {
+   "a": "Random",
+   "b": "PercentOfHouse",
+   "a_wins": 26,
+   "games": 400,
+   "ci95": [
+    0.0447,
+    0.0935
+   ]
+  },
+  {
+   "a": "Random",
+   "b": "PercentOfRemaining",
+   "a_wins": 40,
+   "games": 400,
+   "ci95": [
+    0.0743,
+    0.1333
    ]
   },
   {
@@ -210,6 +244,26 @@
   },
   {
    "a": "GreedyCards",
+   "b": "PercentOfHouse",
+   "a_wins": 259,
+   "games": 1000,
+   "ci95": [
+    0.2328,
+    0.287
+   ]
+  },
+  {
+   "a": "GreedyCards",
+   "b": "PercentOfRemaining",
+   "a_wins": 325,
+   "games": 1000,
+   "ci95": [
+    0.2967,
+    0.3547
+   ]
+  },
+  {
+   "a": "GreedyCards",
    "b": "GreedyBanners",
    "a_wins": 293,
    "games": 1000,
@@ -300,6 +354,26 @@
   },
   {
    "a": "SmallHousesFirst",
+   "b": "PercentOfHouse",
+   "a_wins": 537,
+   "games": 1200,
+   "ci95": [
+    0.4196,
+    0.4758
+   ]
+  },
+  {
+   "a": "SmallHousesFirst",
+   "b": "PercentOfRemaining",
+   "a_wins": 505,
+   "games": 1200,
+   "ci95": [
+    0.3932,
+    0.449
+   ]
+  },
+  {
+   "a": "SmallHousesFirst",
    "b": "GreedyBanners",
    "a_wins": 481,
    "games": 1200,
@@ -386,6 +460,196 @@
    "ci95": [
     0.0204,
     0.0769
+   ]
+  },
+  {
+   "a": "PercentOfHouse",
+   "b": "PercentOfRemaining",
+   "a_wins": 596,
+   "games": 1200,
+   "ci95": [
+    0.4684,
+    0.5249
+   ]
+  },
+  {
+   "a": "PercentOfHouse",
+   "b": "GreedyBanners",
+   "a_wins": 522,
+   "games": 1200,
+   "ci95": [
+    0.4072,
+    0.4632
+   ]
+  },
+  {
+   "a": "PercentOfHouse",
+   "b": "Heuristic1",
+   "a_wins": 467,
+   "games": 1200,
+   "ci95": [
+    0.362,
+    0.4171
+   ]
+  },
+  {
+   "a": "PercentOfHouse",
+   "b": "AlphaBeta2",
+   "a_wins": 176,
+   "games": 800,
+   "ci95": [
+    0.1927,
+    0.25
+   ]
+  },
+  {
+   "a": "PercentOfHouse",
+   "b": "AlphaBeta3",
+   "a_wins": 94,
+   "games": 600,
+   "ci95": [
+    0.1298,
+    0.1879
+   ]
+  },
+  {
+   "a": "PercentOfHouse",
+   "b": "AlphaBeta4",
+   "a_wins": 99,
+   "games": 600,
+   "ci95": [
+    0.1374,
+    0.1968
+   ]
+  },
+  {
+   "a": "PercentOfHouse",
+   "b": "AlphaBeta5",
+   "a_wins": 74,
+   "games": 600,
+   "ci95": [
+    0.0994,
+    0.1521
+   ]
+  },
+  {
+   "a": "PercentOfHouse",
+   "b": "AlphaBeta5+Solve14",
+   "a_wins": 74,
+   "games": 600,
+   "ci95": [
+    0.0994,
+    0.1521
+   ]
+  },
+  {
+   "a": "PercentOfHouse",
+   "b": "MonteCarlo30",
+   "a_wins": 260,
+   "games": 1000,
+   "ci95": [
+    0.2338,
+    0.2881
+   ]
+  },
+  {
+   "a": "PercentOfHouse",
+   "b": "MCTS400",
+   "a_wins": 32,
+   "games": 400,
+   "ci95": [
+    0.0572,
+    0.1108
+   ]
+  },
+  {
+   "a": "PercentOfRemaining",
+   "b": "GreedyBanners",
+   "a_wins": 540,
+   "games": 1200,
+   "ci95": [
+    0.4221,
+    0.4783
+   ]
+  },
+  {
+   "a": "PercentOfRemaining",
+   "b": "Heuristic1",
+   "a_wins": 459,
+   "games": 1200,
+   "ci95": [
+    0.3554,
+    0.4103
+   ]
+  },
+  {
+   "a": "PercentOfRemaining",
+   "b": "AlphaBeta2",
+   "a_wins": 152,
+   "games": 800,
+   "ci95": [
+    0.1643,
+    0.2186
+   ]
+  },
+  {
+   "a": "PercentOfRemaining",
+   "b": "AlphaBeta3",
+   "a_wins": 76,
+   "games": 600,
+   "ci95": [
+    0.1024,
+    0.1557
+   ]
+  },
+  {
+   "a": "PercentOfRemaining",
+   "b": "AlphaBeta4",
+   "a_wins": 66,
+   "games": 600,
+   "ci95": [
+    0.0874,
+    0.1376
+   ]
+  },
+  {
+   "a": "PercentOfRemaining",
+   "b": "AlphaBeta5",
+   "a_wins": 74,
+   "games": 600,
+   "ci95": [
+    0.0994,
+    0.1521
+   ]
+  },
+  {
+   "a": "PercentOfRemaining",
+   "b": "AlphaBeta5+Solve14",
+   "a_wins": 35,
+   "games": 400,
+   "ci95": [
+    0.0636,
+    0.1193
+   ]
+  },
+  {
+   "a": "PercentOfRemaining",
+   "b": "MonteCarlo30",
+   "a_wins": 281,
+   "games": 1000,
+   "ci95": [
+    0.254,
+    0.3097
+   ]
+  },
+  {
+   "a": "PercentOfRemaining",
+   "b": "MCTS400",
+   "a_wins": 29,
+   "games": 400,
+   "ci95": [
+    0.051,
+    0.1022
    ]
   },
   {
