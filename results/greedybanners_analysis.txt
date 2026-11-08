@@ -1,0 +1,16 @@
+GreedyBanners over 300 games vs the field: win rate 0.303
+  avg moves available per decision : 4.7
+  chose the biggest grab           : 85.0%
+  took a banner when one was there : 87.8%
+  chose the move leaving the opponent the smallest grab: 68.5%
+  moves that cleared a house (companion): 18.6%
+  avg banners at end               : 3.12 of 7
+  share of each banner won:
+    Stark      45.0%
+    Greyjoy    42.7%
+    Lannister  48.0%
+    Targaryen  41.3%
+    Baratheon  47.7%
+    Tyrell     42.0%
+    Tully      45.0%
+  companion picks: {'Sandor Clegane': 68, 'Brienne': 60, 'Khal Drogo': 60, 'Shae': 59, 'Gendry': 59, 'Loras Tyrell': 55, 'Hodor': 54, 'Jorah Mormont': 52, 'Bronn': 49, "Jaqen H'ghar": 45, 'Jon Snow': 45, 'Melisandre': 16, 'Ramsay Snow': 15}

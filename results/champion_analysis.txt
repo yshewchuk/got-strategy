@@ -1,0 +1,16 @@
+AlphaBeta5+Solve14 over 300 games vs the field: win rate 0.763
+  avg moves available per decision : 4.7
+  chose the biggest grab           : 80.0%
+  took a banner when one was there : 79.5%
+  chose the move leaving the opponent the smallest grab: 70.0%
+  moves that cleared a house (companion): 20.3%
+  avg banners at end               : 4.11 of 7
+  share of each banner won:
+    Stark      54.3%
+    Greyjoy    59.7%
+    Lannister  55.0%
+    Targaryen  49.7%
+    Baratheon  63.7%
+    Tyrell     62.3%
+    Tully      66.3%
+  companion picks: {'Brienne': 107, 'Sandor Clegane': 78, "Jaqen H'ghar": 63, 'Jon Snow': 62, 'Gendry': 62, 'Shae': 61, 'Khal Drogo': 55, 'Hodor': 53, 'Loras Tyrell': 50, 'Ramsay Snow': 47, 'Bronn': 46, 'Jorah Mormont': 43, 'Melisandre': 30}

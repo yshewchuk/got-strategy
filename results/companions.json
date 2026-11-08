@@ -1,0 +1,752 @@
+{
+ "companions": true,
+ "first_seat_win_rate": 0.5464529914529914,
+ "ranking": [
+  {
+   "strategy": "AlphaBeta5+Solve14",
+   "elo": 771,
+   "avg_win": 0.785,
+   "worst_win": 0.578,
+   "worst_vs": "AlphaBeta5"
+  },
+  {
+   "strategy": "MCTS400",
+   "elo": 743,
+   "avg_win": 0.774,
+   "worst_win": 0.417,
+   "worst_vs": "AlphaBeta5+Solve14"
+  },
+  {
+   "strategy": "AlphaBeta5",
+   "elo": 736,
+   "avg_win": 0.759,
+   "worst_win": 0.422,
+   "worst_vs": "AlphaBeta5+Solve14"
+  },
+  {
+   "strategy": "AlphaBeta4",
+   "elo": 679,
+   "avg_win": 0.705,
+   "worst_win": 0.341,
+   "worst_vs": "AlphaBeta5+Solve14"
+  },
+  {
+   "strategy": "AlphaBeta3",
+   "elo": 632,
+   "avg_win": 0.65,
+   "worst_win": 0.307,
+   "worst_vs": "AlphaBeta5+Solve14"
+  },
+  {
+   "strategy": "AlphaBeta2",
+   "elo": 586,
+   "avg_win": 0.605,
+   "worst_win": 0.266,
+   "worst_vs": "AlphaBeta5"
+  },
+  {
+   "strategy": "MonteCarlo30",
+   "elo": 489,
+   "avg_win": 0.498,
+   "worst_win": 0.143,
+   "worst_vs": "MCTS400"
+  },
+  {
+   "strategy": "Heuristic1",
+   "elo": 358,
+   "avg_win": 0.355,
+   "worst_win": 0.085,
+   "worst_vs": "MCTS400"
+  },
+  {
+   "strategy": "GreedyBanners",
+   "elo": 327,
+   "avg_win": 0.32,
+   "worst_win": 0.058,
+   "worst_vs": "MCTS400"
+  },
+  {
+   "strategy": "SmallHousesFirst",
+   "elo": 278,
+   "avg_win": 0.279,
+   "worst_win": 0.04,
+   "worst_vs": "MCTS400"
+  },
+  {
+   "strategy": "GreedyCards",
+   "elo": 177,
+   "avg_win": 0.194,
+   "worst_win": 0.03,
+   "worst_vs": "AlphaBeta5"
+  },
+  {
+   "strategy": "Random",
+   "elo": 0,
+   "avg_win": 0.078,
+   "worst_win": 0.005,
+   "worst_vs": "MCTS400"
+  }
+ ],
+ "pairs": [
+  {
+   "a": "Random",
+   "b": "GreedyCards",
+   "a_wins": 187,
+   "games": 800,
+   "ci95": [
+    0.2057,
+    0.2643
+   ]
+  },
+  {
+   "a": "Random",
+   "b": "SmallHousesFirst",
+   "a_wins": 85,
+   "games": 600,
+   "ci95": [
+    0.116,
+    0.1719
+   ]
+  },
+  {
+   "a": "Random",
+   "b": "GreedyBanners",
+   "a_wins": 95,
+   "games": 600,
+   "ci95": [
+    0.1313,
+    0.1897
+   ]
+  },
+  {
+   "a": "Random",
+   "b": "Heuristic1",
+   "a_wins": 79,
+   "games": 600,
+   "ci95": [
+    0.1069,
+    0.1611
+   ]
+  },
+  {
+   "a": "Random",
+   "b": "AlphaBeta2",
+   "a_wins": 5,
+   "games": 200,
+   "ci95": [
+    0.0107,
+    0.0572
+   ]
+  },
+  {
+   "a": "Random",
+   "b": "AlphaBeta3",
+   "a_wins": 23,
+   "games": 400,
+   "ci95": [
+    0.0386,
+    0.0848
+   ]
+  },
+  {
+   "a": "Random",
+   "b": "AlphaBeta4",
+   "a_wins": 3,
+   "games": 200,
+   "ci95": [
+    0.0051,
+    0.0432
+   ]
+  },
+  {
+   "a": "Random",
+   "b": "AlphaBeta5",
+   "a_wins": 5,
+   "games": 200,
+   "ci95": [
+    0.0107,
+    0.0572
+   ]
+  },
+  {
+   "a": "Random",
+   "b": "AlphaBeta5+Solve14",
+   "a_wins": 7,
+   "games": 200,
+   "ci95": [
+    0.0171,
+    0.0705
+   ]
+  },
+  {
+   "a": "Random",
+   "b": "MonteCarlo30",
+   "a_wins": 6,
+   "games": 200,
+   "ci95": [
+    0.0138,
+    0.0639
+   ]
+  },
+  {
+   "a": "Random",
+   "b": "MCTS400",
+   "a_wins": 1,
+   "games": 200,
+   "ci95": [
+    0.0009,
+    0.0278
+   ]
+  },
+  {
+   "a": "GreedyCards",
+   "b": "SmallHousesFirst",
+   "a_wins": 279,
+   "games": 1000,
+   "ci95": [
+    0.2521,
+    0.3076
+   ]
+  },
+  {
+   "a": "GreedyCards",
+   "b": "GreedyBanners",
+   "a_wins": 293,
+   "games": 1000,
+   "ci95": [
+    0.2656,
+    0.322
+   ]
+  },
+  {
+   "a": "GreedyCards",
+   "b": "Heuristic1",
+   "a_wins": 271,
+   "games": 1000,
+   "ci95": [
+    0.2444,
+    0.2994
+   ]
+  },
+  {
+   "a": "GreedyCards",
+   "b": "AlphaBeta2",
+   "a_wins": 69,
+   "games": 600,
+   "ci95": [
+    0.0919,
+    0.143
+   ]
+  },
+  {
+   "a": "GreedyCards",
+   "b": "AlphaBeta3",
+   "a_wins": 67,
+   "games": 600,
+   "ci95": [
+    0.0889,
+    0.1394
+   ]
+  },
+  {
+   "a": "GreedyCards",
+   "b": "AlphaBeta4",
+   "a_wins": 31,
+   "games": 400,
+   "ci95": [
+    0.0551,
+    0.1079
+   ]
+  },
+  {
+   "a": "GreedyCards",
+   "b": "AlphaBeta5",
+   "a_wins": 6,
+   "games": 200,
+   "ci95": [
+    0.0138,
+    0.0639
+   ]
+  },
+  {
+   "a": "GreedyCards",
+   "b": "AlphaBeta5+Solve14",
+   "a_wins": 27,
+   "games": 400,
+   "ci95": [
+    0.0468,
+    0.0964
+   ]
+  },
+  {
+   "a": "GreedyCards",
+   "b": "MonteCarlo30",
+   "a_wins": 33,
+   "games": 400,
+   "ci95": [
+    0.0593,
+    0.1136
+   ]
+  },
+  {
+   "a": "GreedyCards",
+   "b": "MCTS400",
+   "a_wins": 8,
+   "games": 200,
+   "ci95": [
+    0.0204,
+    0.0769
+   ]
+  },
+  {
+   "a": "SmallHousesFirst",
+   "b": "GreedyBanners",
+   "a_wins": 481,
+   "games": 1200,
+   "ci95": [
+    0.3735,
+    0.4288
+   ]
+  },
+  {
+   "a": "SmallHousesFirst",
+   "b": "Heuristic1",
+   "a_wins": 337,
+   "games": 1000,
+   "ci95": [
+    0.3084,
+    0.3669
+   ]
+  },
+  {
+   "a": "SmallHousesFirst",
+   "b": "AlphaBeta2",
+   "a_wins": 82,
+   "games": 600,
+   "ci95": [
+    0.1115,
+    0.1665
+   ]
+  },
+  {
+   "a": "SmallHousesFirst",
+   "b": "AlphaBeta3",
+   "a_wins": 64,
+   "games": 600,
+   "ci95": [
+    0.0844,
+    0.1339
+   ]
+  },
+  {
+   "a": "SmallHousesFirst",
+   "b": "AlphaBeta4",
+   "a_wins": 55,
+   "games": 600,
+   "ci95": [
+    0.0711,
+    0.1174
+   ]
+  },
+  {
+   "a": "SmallHousesFirst",
+   "b": "AlphaBeta5",
+   "a_wins": 36,
+   "games": 400,
+   "ci95": [
+    0.0657,
+    0.1221
+   ]
+  },
+  {
+   "a": "SmallHousesFirst",
+   "b": "AlphaBeta5+Solve14",
+   "a_wins": 27,
+   "games": 400,
+   "ci95": [
+    0.0468,
+    0.0964
+   ]
+  },
+  {
+   "a": "SmallHousesFirst",
+   "b": "MonteCarlo30",
+   "a_wins": 173,
+   "games": 800,
+   "ci95": [
+    0.1891,
+    0.2461
+   ]
+  },
+  {
+   "a": "SmallHousesFirst",
+   "b": "MCTS400",
+   "a_wins": 8,
+   "games": 200,
+   "ci95": [
+    0.0204,
+    0.0769
+   ]
+  },
+  {
+   "a": "GreedyBanners",
+   "b": "Heuristic1",
+   "a_wins": 573,
+   "games": 1200,
+   "ci95": [
+    0.4494,
+    0.5058
+   ]
+  },
+  {
+   "a": "GreedyBanners",
+   "b": "AlphaBeta2",
+   "a_wins": 82,
+   "games": 600,
+   "ci95": [
+    0.1115,
+    0.1665
+   ]
+  },
+  {
+   "a": "GreedyBanners",
+   "b": "AlphaBeta3",
+   "a_wins": 76,
+   "games": 600,
+   "ci95": [
+    0.1024,
+    0.1557
+   ]
+  },
+  {
+   "a": "GreedyBanners",
+   "b": "AlphaBeta4",
+   "a_wins": 36,
+   "games": 400,
+   "ci95": [
+    0.0657,
+    0.1221
+   ]
+  },
+  {
+   "a": "GreedyBanners",
+   "b": "AlphaBeta5",
+   "a_wins": 41,
+   "games": 400,
+   "ci95": [
+    0.0765,
+    0.1361
+   ]
+  },
+  {
+   "a": "GreedyBanners",
+   "b": "AlphaBeta5+Solve14",
+   "a_wins": 73,
+   "games": 600,
+   "ci95": [
+    0.0979,
+    0.1503
+   ]
+  },
+  {
+   "a": "GreedyBanners",
+   "b": "MonteCarlo30",
+   "a_wins": 257,
+   "games": 1000,
+   "ci95": [
+    0.2309,
+    0.285
+   ]
+  },
+  {
+   "a": "GreedyBanners",
+   "b": "MCTS400",
+   "a_wins": 23,
+   "games": 400,
+   "ci95": [
+    0.0386,
+    0.0848
+   ]
+  },
+  {
+   "a": "Heuristic1",
+   "b": "AlphaBeta2",
+   "a_wins": 158,
+   "games": 800,
+   "ci95": [
+    0.1714,
+    0.2265
+   ]
+  },
+  {
+   "a": "Heuristic1",
+   "b": "AlphaBeta3",
+   "a_wins": 98,
+   "games": 600,
+   "ci95": [
+    0.1359,
+    0.195
+   ]
+  },
+  {
+   "a": "Heuristic1",
+   "b": "AlphaBeta4",
+   "a_wins": 67,
+   "games": 600,
+   "ci95": [
+    0.0889,
+    0.1394
+   ]
+  },
+  {
+   "a": "Heuristic1",
+   "b": "AlphaBeta5",
+   "a_wins": 71,
+   "games": 600,
+   "ci95": [
+    0.0949,
+    0.1466
+   ]
+  },
+  {
+   "a": "Heuristic1",
+   "b": "AlphaBeta5+Solve14",
+   "a_wins": 79,
+   "games": 600,
+   "ci95": [
+    0.1069,
+    0.1611
+   ]
+  },
+  {
+   "a": "Heuristic1",
+   "b": "MonteCarlo30",
+   "a_wins": 312,
+   "games": 1000,
+   "ci95": [
+    0.284,
+    0.3414
+   ]
+  },
+  {
+   "a": "Heuristic1",
+   "b": "MCTS400",
+   "a_wins": 34,
+   "games": 400,
+   "ci95": [
+    0.0615,
+    0.1164
+   ]
+  },
+  {
+   "a": "AlphaBeta2",
+   "b": "AlphaBeta3",
+   "a_wins": 459,
+   "games": 1200,
+   "ci95": [
+    0.3554,
+    0.4103
+   ]
+  },
+  {
+   "a": "AlphaBeta2",
+   "b": "AlphaBeta4",
+   "a_wins": 365,
+   "games": 1000,
+   "ci95": [
+    0.3357,
+    0.3953
+   ]
+  },
+  {
+   "a": "AlphaBeta2",
+   "b": "AlphaBeta5",
+   "a_wins": 266,
+   "games": 1000,
+   "ci95": [
+    0.2395,
+    0.2942
+   ]
+  },
+  {
+   "a": "AlphaBeta2",
+   "b": "AlphaBeta5+Solve14",
+   "a_wins": 279,
+   "games": 1000,
+   "ci95": [
+    0.2521,
+    0.3076
+   ]
+  },
+  {
+   "a": "AlphaBeta2",
+   "b": "MonteCarlo30",
+   "a_wins": 661,
+   "games": 1000,
+   "ci95": [
+    0.6311,
+    0.6897
+   ]
+  },
+  {
+   "a": "AlphaBeta2",
+   "b": "MCTS400",
+   "a_wins": 313,
+   "games": 1000,
+   "ci95": [
+    0.285,
+    0.3424
+   ]
+  },
+  {
+   "a": "AlphaBeta3",
+   "b": "AlphaBeta4",
+   "a_wins": 476,
+   "games": 1200,
+   "ci95": [
+    0.3694,
+    0.4246
+   ]
+  },
+  {
+   "a": "AlphaBeta3",
+   "b": "AlphaBeta5",
+   "a_wins": 351,
+   "games": 1000,
+   "ci95": [
+    0.322,
+    0.3811
+   ]
+  },
+  {
+   "a": "AlphaBeta3",
+   "b": "AlphaBeta5+Solve14",
+   "a_wins": 307,
+   "games": 1000,
+   "ci95": [
+    0.2792,
+    0.3363
+   ]
+  },
+  {
+   "a": "AlphaBeta3",
+   "b": "MonteCarlo30",
+   "a_wins": 692,
+   "games": 1000,
+   "ci95": [
+    0.6627,
+    0.7198
+   ]
+  },
+  {
+   "a": "AlphaBeta3",
+   "b": "MCTS400",
+   "a_wins": 351,
+   "games": 1000,
+   "ci95": [
+    0.322,
+    0.3811
+   ]
+  },
+  {
+   "a": "AlphaBeta4",
+   "b": "AlphaBeta5",
+   "a_wins": 345,
+   "games": 1000,
+   "ci95": [
+    0.3162,
+    0.375
+   ]
+  },
+  {
+   "a": "AlphaBeta4",
+   "b": "AlphaBeta5+Solve14",
+   "a_wins": 341,
+   "games": 1000,
+   "ci95": [
+    0.3123,
+    0.3709
+   ]
+  },
+  {
+   "a": "AlphaBeta4",
+   "b": "MonteCarlo30",
+   "a_wins": 637,
+   "games": 800,
+   "ci95": [
+    0.767,
+    0.8227
+   ]
+  },
+  {
+   "a": "AlphaBeta4",
+   "b": "MCTS400",
+   "a_wins": 499,
+   "games": 1200,
+   "ci95": [
+    0.3883,
+    0.4439
+   ]
+  },
+  {
+   "a": "AlphaBeta5",
+   "b": "AlphaBeta5+Solve14",
+   "a_wins": 506,
+   "games": 1200,
+   "ci95": [
+    0.394,
+    0.4498
+   ]
+  },
+  {
+   "a": "AlphaBeta5",
+   "b": "MonteCarlo30",
+   "a_wins": 644,
+   "games": 800,
+   "ci95": [
+    0.7761,
+    0.831
+   ]
+  },
+  {
+   "a": "AlphaBeta5",
+   "b": "MCTS400",
+   "a_wins": 540,
+   "games": 1200,
+   "ci95": [
+    0.4221,
+    0.4783
+   ]
+  },
+  {
+   "a": "AlphaBeta5+Solve14",
+   "b": "MonteCarlo30",
+   "a_wins": 655,
+   "games": 800,
+   "ci95": [
+    0.7906,
+    0.8439
+   ]
+  },
+  {
+   "a": "AlphaBeta5+Solve14",
+   "b": "MCTS400",
+   "a_wins": 700,
+   "games": 1200,
+   "ci95": [
+    0.5552,
+    0.6109
+   ]
+  },
+  {
+   "a": "MonteCarlo30",
+   "b": "MCTS400",
+   "a_wins": 86,
+   "games": 600,
+   "ci95": [
+    0.1176,
+    0.1736
+   ]
+  }
+ ]
+}
