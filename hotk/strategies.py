@@ -112,6 +112,25 @@ class SmallHousesFirst(Strategy):
         return max(legal_moves(s), key=key)
 
 
+class PercentOfHouse(Strategy):
+    """Take the group that captures the largest share of its House's total size
+    (e.g. 2 Tully = 100%, 3 Stark = 37.5%). Ties: more cards, then random."""
+    name = "PercentOfHouse"
+
+    def choose_move(self, s, rng):
+        return max(legal_moves(s), key=lambda m: (len(m[3]) / HOUSE_SIZE[m[1]], len(m[3]), rng.random()))
+
+
+class PercentOfRemaining(Strategy):
+    """Take the group that captures the largest share of that House's cards still
+    on the board (100% = you clear the House and earn a companion)."""
+    name = "PercentOfRemaining"
+
+    def choose_move(self, s, rng):
+        bc = s.board_counts()
+        return max(legal_moves(s), key=lambda m: (len(m[3]) / bc[m[1]], len(m[3]), rng.random()))
+
+
 class GreedyBanners(Strategy):
     """1-ply: maximise banner differential right after the move."""
     name = "GreedyBanners"
@@ -286,6 +305,8 @@ def all_strategies():
         RandomStrategy(),
         GreedyCards(),
         SmallHousesFirst(),
+        PercentOfHouse(),
+        PercentOfRemaining(),
         GreedyBanners(),
         Heuristic(),
         AlphaBeta(2),

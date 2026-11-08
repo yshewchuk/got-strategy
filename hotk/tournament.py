@@ -77,17 +77,33 @@ def main():
     ap.add_argument("--no-companions", action="store_true")
     ap.add_argument("--out", default="results.json")
     ap.add_argument("--workers", type=int, default=4)
+    ap.add_argument("--only", nargs="*", default=None,
+                    help="only play pairings involving these strategies")
+    ap.add_argument("--merge", default=None,
+                    help="earlier results .json whose pairings are reused instead of replayed")
     args = ap.parse_args()
     comps = not args.no_companions
 
     names = list(STRATS)
     pairs = list(itertools.combinations(names, 2))
     res = {pr: [0, 0] for pr in pairs}
+    reused = set()
+    if args.merge:
+        with open(args.merge) as f:
+            old = json.load(f)
+        for row in old["pairs"]:
+            for pr, flip in (((row["a"], row["b"]), False), ((row["b"], row["a"]), True)):
+                if pr in res:
+                    k = row["games"] - row["a_wins"] if flip else row["a_wins"]
+                    res[pr] = [k, row["games"]]
+                    reused.add(pr)
+    if args.only:
+        reused |= {pr for pr in pairs if not set(pr) & set(args.only)}
     first_seat = [0, 0]
     next_seed = {pr: 1_000_000 * i for i, pr in enumerate(pairs)}
     t0 = time.time()
     with Pool(args.workers) as pool:
-        active = set(pairs)
+        active = set(pairs) - reused
         while active:
             jobs = []
             for pr in active:
